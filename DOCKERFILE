@@ -1,0 +1,15 @@
+FROM docker/dev-environments-default as builder
+
+ARG ver=3.11.4
+
+RUN apt update && apt upgrade -y
+RUN apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
+RUN wget https://www.python.org/ftp/python/${ver}/Python-${ver}.tgz
+RUN tar -xvf Python*.tgz
+WORKDIR /Python-${ver}
+RUN ./configure --prefix=/usr/local --enable-optimizations --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+RUN make altinstall
+
+WORKDIR /
+RUN rm -rf /Python-${ver}
+RUN rm Python*.tgz
