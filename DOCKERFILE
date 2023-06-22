@@ -9,6 +9,11 @@ RUN tar -xvf Python*.tgz
 WORKDIR /Python-${ver}
 RUN ./configure --prefix=/usr/local --enable-optimizations --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
 RUN make altinstall
+RUN ln -s -T /usr/local/bin/python3.11 /usr/local/bin/python3
+RUN ln -s -T /usr/local/bin/pip3.11 /usr/local/bin/pip3
+RUN ln -s -T /usr/local/bin/python3.11 /usr/local/bin/python
+RUN ln -s -T /usr/local/bin/pip3.11 /usr/local/bin/pip
+
 
 WORKDIR /
 RUN rm -rf /Python-${ver}
