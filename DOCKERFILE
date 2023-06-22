@@ -13,7 +13,10 @@ RUN ln -s -T /usr/local/bin/python3.11 /usr/local/bin/python3
 RUN ln -s -T /usr/local/bin/pip3.11 /usr/local/bin/pip3
 RUN ln -s -T /usr/local/bin/python3.11 /usr/local/bin/python
 RUN ln -s -T /usr/local/bin/pip3.11 /usr/local/bin/pip
-
+RUN python -m pip install --upgrade pip
+RUN pip3 install --upgrade setuptools
+RUN pip3 install --upgrade wheel
+RUN pip3 install --upgrade virtualenv
 
 WORKDIR /
 RUN rm -rf /Python-${ver}
