@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+		"eamodio.gitlens",
+		"esbenp.prettier-vscode",
+		"GitHub.copilot",
+		"mechatroner.rainbow-csv",
+		"ms-python.black-formatter",
+		"ms-python.isort",
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"redhat.vscode-xml"
+    ]
+}
