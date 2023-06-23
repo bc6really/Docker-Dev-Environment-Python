@@ -21,3 +21,15 @@ RUN pip3 install --upgrade virtualenv
 WORKDIR /
 RUN rm -rf /Python-${ver}
 RUN rm Python*.tgz
+
+RUN chsh -s /bin/zsh root
+WORKDIR /root/.oh-my-zsh
+RUN git pull
+WORKDIR /root
+COPY .docker_image_files/.zshrc .zshrc
+COPY .docker_image_files/poshtheme.omp.json poshtheme.omp.json
+
+RUN curl -s https://ohmyposh.dev/install.sh | bash -s
+
+WORKDIR /com.docker.devenvironments.code/
+COPY .vscode .vscode
