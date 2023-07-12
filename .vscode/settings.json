@@ -1,17 +1,4 @@
 {
-	"workspaceFolder": "/com.docker.devenvironments.code",
-	"extensions": [
-		"eamodio.gitlens",
-		"esbenp.prettier-vscode",
-		"GitHub.copilot",
-		"mechatroner.rainbow-csv",
-		"ms-python.black-formatter",
-		"ms-python.isort",
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"redhat.vscode-xml"
-	],
-	"settings": {
-		"terminal.integrated.fontFamily": "MesloLGM Nerd Font"
-	}
+    "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
+
 }
