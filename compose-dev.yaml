@@ -3,8 +3,8 @@ services:
     entrypoint:
     - sleep
     - infinity
-    # image: docker/dev-environments-default:stable-1
-    image: coder/python-dev-env:latest
+    # Uncomment build section below to build a fresh version of the image, uncomment image section to use a pre-built image
+    # image: coder/python-dev-env:latest
     build:
       context: .
       target: builder
